@@ -78,7 +78,7 @@ export default function Menu() {
         )}
         <button
           onClick={() => { setCart([]); setPhone(''); setTableNumber(''); setError(''); setStep('menu') }}
-          style={{ marginTop: 20, background: '#f1f5f9', border: 'none', borderRadius: 8, padding: '10px 20px', cursor: 'pointer', fontSize: 13 }}
+          style={{ marginTop: 20, color: 'black', background: '#f1f5f9', border: 'none', borderRadius: 8, padding: '10px 20px', cursor: 'pointer', fontSize: 13 }}
         >
           Back to menu
         </button>
