@@ -7,7 +7,16 @@ export default function ARViewer() {
   const price = p.get('price') || '0'
 
   return (
-    <div style={{ maxWidth: 430, margin: '0 auto', fontFamily: 'sans-serif' }}>
+    <div
+      style={{
+        maxWidth: 430,
+        margin: '0 auto',
+        fontFamily: 'sans-serif',
+        background: '#0b0f1a',
+        minHeight: '100vh',
+        color: '#fff'
+      }}
+    >
       <div
         style={{
           background: '#1e293b',
@@ -44,8 +53,11 @@ export default function ARViewer() {
       <div
         style={{
           width: '100%',
-          minHeight: 300,
-          background: 'linear-gradient(135deg,#f8f4ef,#ede8e0)'
+          height: 430,
+          background: '#000',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
         }}
       >
         {modelUrl ? (
@@ -56,27 +68,32 @@ export default function ARViewer() {
             ar-modes="scene-viewer quick-look webxr"
             camera-controls
             auto-rotate
-            style={{ width: '100%', height: '300px' }}
+            shadow-intensity="1.5"
+            exposure="1.1"
+            style={{
+              width: '100%',
+              height: '100%',
+              backgroundColor: '#000'
+            }}
           />
         ) : (
-          <div
-            style={{
-              height: 300,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#94a3b8',
-              fontSize: 13
-            }}
-          >
+          <div style={{ color: '#94a3b8', fontSize: 13 }}>
             3D model not available
           </div>
         )}
       </div>
 
-      <div style={{ padding: '14px 16px', borderBottom: '1px solid #f1f5f9' }}>
-        <div style={{ fontWeight: 700, fontSize: 17 }}>{name}</div>
-        <div style={{ fontWeight: 700, color: '#2563eb', fontSize: 17, marginTop: 4 }}>
+      <div style={{ padding: '18px 16px', borderBottom: '1px solid #1f2937' }}>
+        <div style={{ fontWeight: 700, fontSize: 17, textAlign: 'center' }}>{name}</div>
+        <div
+          style={{
+            fontWeight: 700,
+            color: '#4f6cff',
+            fontSize: 17,
+            marginTop: 8,
+            textAlign: 'center'
+          }}
+        >
           €{Number(price).toFixed(2)}
         </div>
       </div>
@@ -86,13 +103,13 @@ export default function ARViewer() {
           onClick={() => window.history.back()}
           style={{
             width: '100%',
-            background: '#2563eb',
+            background: '#4f6cff',
             color: '#fff',
             border: 'none',
-            borderRadius: 10,
-            padding: '13px',
+            borderRadius: 12,
+            padding: '14px',
             fontWeight: 700,
-            fontSize: 15,
+            fontSize: 16,
             cursor: 'pointer'
           }}
         >

@@ -5,14 +5,23 @@ import LoyaltyPage from './pages/LoyaltyPage'
 import MenuManager from './pages/MenuManager'
 import ARViewer from './pages/ARViewer'
 import QRPage from './pages/QRPage'
-
+import Navbar from './pages/Navbar'
 
 export default function App() {
   const path = window.location.pathname
-  if(path==='/kitchen') return <Kitchen />
-  if(path==='/loyalty') return <LoyaltyPage />
-  if(path==='/manage') return <MenuManager />
-  if(path==='/ar') return <ARViewer />
-  if(path==='/qr') return <QRPage />
-  return <Menu />
+
+  let PageComponent = Menu
+
+  if (path === '/kitchen') PageComponent = Kitchen
+  else if (path === '/loyalty') PageComponent = LoyaltyPage
+  else if (path === '/manage') PageComponent = MenuManager
+  else if (path === '/ar') PageComponent = ARViewer
+  else if (path === '/qr') PageComponent = QRPage
+
+  return (
+    <>
+      <Navbar />
+      <PageComponent />
+    </>
+  )
 }
