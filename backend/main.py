@@ -170,6 +170,8 @@ def add_points(phone: str, points: int):
 
         sb.table("loyalty_customers").insert(payload).execute()
 
+
+
 # --------------------------------------------------
 # MODELS
 # --------------------------------------------------
@@ -597,3 +599,11 @@ async def get_qr():
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to generate QR code: {str(e)}")
+    
+def verify_owner_password(plain_password: str) -> bool:
+    hashed_password = get_setting("owner_password")
+
+    print("Entered:", plain_password)
+    print("From DB:", hashed_password)
+
+    return pwd_context.verify(plain_password, hashed_password)
