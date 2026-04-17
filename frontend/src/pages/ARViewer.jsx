@@ -20,42 +20,34 @@ export default function ARViewer() {
     >
       <div
         style={{
-          width: '100%',
-          background: '#1e293b'
+          background: '#1e293b',
+          color: '#fff',
+          padding: '13px 16px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 10,
+          boxSizing: 'border-box'
         }}
       >
-        <div
+        <button
+          onClick={() => window.history.back()}
           style={{
-            maxWidth: 430,
-            margin: '0 auto',
+            background: 'rgba(255,255,255,0.1)',
+            border: 'none',
             color: '#fff',
-            padding: '13px 16px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 10,
-            boxSizing: 'border-box'
+            borderRadius: 7,
+            padding: '5px 10px',
+            cursor: 'pointer',
+            fontSize: 12
           }}
         >
-          <button
-            onClick={() => window.history.back()}
-            style={{
-              background: 'rgba(255,255,255,0.1)',
-              border: 'none',
-              color: '#fff',
-              borderRadius: 7,
-              padding: '5px 10px',
-              cursor: 'pointer',
-              fontSize: 12
-            }}
-          >
-            ← Back
-          </button>
+          ← Back
+        </button>
 
-          <div>
-            <div style={{ fontWeight: 600, fontSize: 14 }}>{name}</div>
-            <div style={{ fontSize: 11, opacity: 0.6 }}>
-              Rotate in 3D or view on table in AR
-            </div>
+        <div>
+          <div style={{ fontWeight: 600, fontSize: 14 }}>{name}</div>
+          <div style={{ fontSize: 11, opacity: 0.6 }}>
+            Rotate in 3D or view on table in AR
           </div>
         </div>
       </div>
@@ -63,7 +55,7 @@ export default function ARViewer() {
       <div
         style={{
           width: '100%',
-          height: '72vh',
+          height: '70vh',
           background: '#000',
           display: 'flex',
           alignItems: 'center',
@@ -83,6 +75,7 @@ export default function ARViewer() {
             exposure="1.1"
             camera-orbit="0deg 75deg 55%"
             field-of-view="20deg"
+            environment-image="neutral"
             style={{
               width: '100%',
               height: '100%',
@@ -98,8 +91,6 @@ export default function ARViewer() {
 
       <div
         style={{
-          maxWidth: 430,
-          margin: '0 auto',
           padding: '18px 16px',
           borderBottom: '1px solid #1f2937',
           boxSizing: 'border-box'
@@ -121,14 +112,7 @@ export default function ARViewer() {
         </div>
       </div>
 
-      <div
-        style={{
-          maxWidth: 430,
-          margin: '0 auto',
-          padding: 16,
-          boxSizing: 'border-box'
-        }}
-      >
+      <div style={{ padding: 16, boxSizing: 'border-box' }}>
         <button
           onClick={() => window.history.back()}
           style={{

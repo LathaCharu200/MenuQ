@@ -1,0 +1,35 @@
+Step 1:
+1. Create account in Supabase
+2. Create project folder
+3. Create tables in Supabase SQL Editor
+================================================================================
+Step 2:
+1. Run below scripts in VS
+- mkdir menuq-backend && cd menuq-backend
+- python -m venv venv
+- Windows: venv\Scripts\activate
+- pip install fastapi uvicorn supabase python-dotenv qrcode pillow pydantic
+====================================================================================
+Step 3:
+1. Write main.py Notebook
+2. Run the Notebook with "uvicorn main:app --reload"       
+
+Example end-to-end scenario of main.py  uvicorn main:app --reload
+
+A customer scans the QR code:
+
+GET /qr returns QR image
+QR opens frontend at http://<LOCAL_IP>:3000
+Frontend calls GET /menu
+Customer selects food and submits order to POST /orders
+Backend stores order in orders
+Backend stores item rows in order_items
+If customer gave phone number, backend adds loyalty points
+Kitchen/staff calls GET /orders/active
+Staff updates status with PATCH /orders/{order_id}/status
+Customer later checks points with GET /loyalty?phone=...
+
+========================================================================================
+Step 4:
+1. Run npm create vite@latest frontend select React and Javascript
+2. Create .env folder in frontend
