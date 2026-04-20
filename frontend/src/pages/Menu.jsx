@@ -121,6 +121,23 @@ export default function Menu() {
           {/* ✅ 3D BUTTON — only shows when model_url exists */}
           {item.model_url && (
             <button
+  onClick={(e) => {
+    e.stopPropagation()
+    window.location.href =
+      `/ar?model=${encodeURIComponent(item.model_url || '')}&name=${encodeURIComponent(item.name)}&price=${encodeURIComponent(item.price)}`
+  }}
+  style={{
+                background: '#7C3AED',
+                color: '#fff',
+                border: 'none',
+                borderRadius: 6,
+                padding: '2px 8px',
+                fontSize: 10,
+                cursor: 'pointer',
+                fontWeight: 700
+              }}
+>
+            {/* <button
               onClick={e => {
                 e.stopPropagation() // prevent adding to cart when tapping 3D
                 window.location.href =
@@ -138,7 +155,7 @@ export default function Menu() {
                 cursor: 'pointer',
                 fontWeight: 700
               }}
-            >
+            > */}
               3D
             </button>
           )}
