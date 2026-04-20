@@ -16,6 +16,7 @@ export default function App() {
   else if (path === '/loyalty') PageComponent = LoyaltyPage
   else if (path === '/manage') PageComponent = MenuManager
   else if (path === '/qr') PageComponent = QRPage
+  else if (path === '/ar') PageComponent = ARViewer
 
   return (
     <>
