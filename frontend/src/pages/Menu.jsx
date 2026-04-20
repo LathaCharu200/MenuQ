@@ -103,6 +103,7 @@ export default function Menu() {
         <img
           src={item.image_url}
           alt={item.name}
+          loading="lazy" 
           style={{ width: 72, height: 72, borderRadius: 10, objectFit: 'cover', flexShrink: 0 }}
         />
       )}
