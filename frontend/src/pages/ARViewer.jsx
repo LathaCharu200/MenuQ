@@ -76,6 +76,8 @@ export default function ARViewer() {
             camera-orbit="0deg 75deg 55%"
             field-of-view="20deg"
             environment-image="neutral"
+            scale="0.28 0.28 0.28"
+            ar-scale="fixed"
             style={{
               width: '100%',
               height: '100%',
