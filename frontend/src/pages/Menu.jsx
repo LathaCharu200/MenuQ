@@ -102,7 +102,8 @@ export default function Menu() {
       {item.image_url && (
         <img
           src={item.image_url}
-          alt={item.name}
+          loading = "lazy"
+          alt={item.name} 
           style={{ width: 72, height: 72, borderRadius: 10, objectFit: 'cover', flexShrink: 0 }}
           loading="lazy"
         />
@@ -121,6 +122,23 @@ export default function Menu() {
           {/* ✅ 3D BUTTON — only shows when model_url exists */}
           {item.model_url && (
             <button
+  onClick={(e) => {
+    e.stopPropagation()
+    window.location.href =
+      `/ar?model=${encodeURIComponent(item.model_url || '')}&name=${encodeURIComponent(item.name)}&price=${encodeURIComponent(item.price)}`
+  }}
+  style={{
+                background: '#7C3AED',
+                color: '#fff',
+                border: 'none',
+                borderRadius: 6,
+                padding: '2px 8px',
+                fontSize: 10,
+                cursor: 'pointer',
+                fontWeight: 700
+              }}
+>
+            {/* <button
               onClick={e => {
                 e.stopPropagation() // prevent adding to cart when tapping 3D
                 window.location.href =
@@ -138,7 +156,7 @@ export default function Menu() {
                 cursor: 'pointer',
                 fontWeight: 700
               }}
-            >
+            > */}
               3D
             </button>
           )}
