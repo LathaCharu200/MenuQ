@@ -40,6 +40,7 @@ export default function Navbar() {
           <a href="/manage" style={linkStyle('/manage')}>Manager</a>
           <a href="/kitchen" style={linkStyle('/kitchen')}>Kitchen</a>
           <a href="/qr" style={linkStyle('/qr')}>QR</a>
+          <a href="/ar" style={linkStyle('/ar')}>AR</a>
         </div>
       </div>
     </div>
