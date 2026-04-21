@@ -77,7 +77,7 @@ export default function ARViewer() {
             field-of-view="20deg"
             environment-image="neutral"
             scale="0.28 0.28 0.28"
-            ar-scale="fixed"
+            // ar-scale="fixed"
             style={{
               width: '100%',
               height: '100%',
